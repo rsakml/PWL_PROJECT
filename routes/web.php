@@ -5,6 +5,7 @@ use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,3 +36,5 @@ Route::resource('/employee', EmployeeController::class);
 
 //route supplier
 Route::resource('/supplier', SupplierController::class);
+
+Route::resource('product', ProductController::class);
