@@ -37,4 +37,4 @@ Route::resource('/employee', EmployeeController::class);
 //route supplier
 Route::resource('/supplier', SupplierController::class);
 
-Route::resource('product', ProductController::class);
+Route::resource('/product', ProductController::class);
