@@ -9,8 +9,8 @@
                         <li class="list-group-item"><b>Foto: </b><img width="100px" src="{{ asset('img/' . $customer->foto) }}"></li>
                         <li class="list-group-item"><b>Nama: </b>{{ $customer->nama }}</li>
                         <li class="list-group-item"><b>Jenis Kelamin: </b>{{ $customer->jenisKelamin }}</li>
-                        <li class="list-group-item"><b>Alamat: </b>{{ $customer->jabatan }}</li>
-                        <li class="list-group-item"><b>No Telp: </b>{{ $customer->nohp }}</li>
+                        <li class="list-group-item"><b>Alamat: </b>{{ $customer->alamat }}</li>
+                        <li class="list-group-item"><b>No Telp: </b>{{ $customer->noTelp}}</li>
                     </ul>
                 </div> <a class="btn btn-success mt-3" href="{{ route('customer.index') }}">Kembali</a>
             </div>
