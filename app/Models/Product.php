@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\PesananDetails;
 
 class Product extends Model
 {
@@ -21,5 +22,10 @@ class Product extends Model
         'harga_jual',
         'stok',
         ];
+    
+    public function pesanan_detail() 
+	{
+	     return $this->hasMany(PesananDetails::class,'product_id', 'id');
+	}
        
 }
