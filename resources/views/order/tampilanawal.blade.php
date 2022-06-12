@@ -20,7 +20,7 @@
                                 <div class="col-md-3 col-sm-4">
                                     <div class="single-new-arrival">
                                         <div class="single-new-arrival-bg">
-                                            <img width="10" height="250" src="{{ url('assets/images/collection') }}/{{ $p->foto }}" class="card-img-top"
+                                            <img width="10" height="250" src="{{ url('img') }}/{{ $p->foto }}" class="card-img-top"
                             alt="...">
                                             <div class="single-new-arrival-bg-overlay"></div>
                                             <div class="sale bg-1">
@@ -29,7 +29,7 @@
                                             <div class="new-arrival-cart">
                                                 <p>
                                                     <span class="lnr lnr-cart"></span>
-                                                    <a href="#">add <span>to </span> cart</a>
+                                                    <a href="{{url('pesan')}}/{{$p->id_product}}">add <span>to </span> cart</a>
                                                 </p>
                                                 <p class="arrival-review pull-right">
                                                     <span class="lnr lnr-heart"></span>
@@ -39,8 +39,8 @@
                                         </div>
                                         <h4><a href="#">{{ $p->nama_product }}</a></h4>
                                         <p class="arrival-product-price">Rp. {{ $p->harga_jual }}</p>
-                                        <a href=" " class="btn btn-primary"><i
-                                            class="fa fa-shopping-cart"></i>Pesan</a>
+                                        {{-- <a href=" " class="btn btn-primary"><i
+                                            class="fa fa-shopping-cart"></i>Pesan</a> --}}
                                     </div>
                                 </div>
                             </div>

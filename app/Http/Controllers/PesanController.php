@@ -179,7 +179,7 @@ class PesanController extends Controller
     {
         //menampilkan detail data dengan menemukan/berdasarkan ... product
         $product = Product::find($id_product);
-        return view('product.detail', compact('product'));
+        return view('pesan.index', compact('product'));
     }
 
     /**
