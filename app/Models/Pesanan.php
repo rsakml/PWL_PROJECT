@@ -17,7 +17,6 @@ class Pesanan extends Model
     protected $fillable = [
         'tanggal',
         'status',
-        'kode',
         'jumlah_harga'
     ];
 

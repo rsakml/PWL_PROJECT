@@ -6,7 +6,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PesanController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,3 +43,7 @@ Route::resource('/supplier', SupplierController::class);
 Route::resource('/product', ProductController::class);
 
 Route::resource('/customer', CustomerController::class);
+
+Route::resource('pesan', PesanController::class);
+
+Route::resource('history', HistoryController::class);

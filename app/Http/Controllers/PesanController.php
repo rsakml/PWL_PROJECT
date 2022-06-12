@@ -154,8 +154,8 @@ class PesanController extends Controller
     public function index(Request $request)
     {
         //fungsi eloquent menampilkan data menggunakan paginaon
-        $product = Product::orderBy('id_product', 'asc')->paginate(5);
-        return view('product.index', compact('product'));
+        $products = Product::orderBy('id_product', 'asc')->paginate(5);
+        return view('order.tampilanawal', compact('products'));
 
     }
     public function create()

@@ -4,21 +4,17 @@
     <div class="container">
         <div class="row justify-content-center">
 
-            {{-- <div class="col-md-12 mt-1">
+            <div class="col-md-12 mt-1">
             <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
+                {{-- <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ url('home1') }}">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Daftar Menu</li>
-                </ol>
+                </ol> --}}
             </nav>
-        </div> --}}
+        </div>
             @foreach ($products as $p)
                     <div class="container">
                         <div class="new-arrivals-content">
-                            <br><br><br>
-                            <div class="section-header">
-                                <h2>Order</h2>
-                            </div><!--/.section-header-->
                             <br><br><br>
                             <div class="row">
                                 <div class="col-md-3 col-sm-4">
