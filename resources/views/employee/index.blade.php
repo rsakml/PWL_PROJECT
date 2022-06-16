@@ -28,7 +28,7 @@
         @foreach ($employee as $e)
             <tr>
                 <td>{{ $e->id }}</td>
-                <td><img height="200" width="180"  src="{{asset('img/'.$e->gambar)}}"></td>
+                <td><img height="200" width="180"  src="{{asset('storage/'.$e->gambar)}}"></td>
                 <td>{{ $e->nama }}</td>
                 <td>{{ $e->jenisKelamin }}</td>
                 <td>{{ $e->jabatan }}</td>

@@ -56,7 +56,6 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> Pembelian</a></li>
             <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Penjualan</a></li>
           </ul>
         </li>

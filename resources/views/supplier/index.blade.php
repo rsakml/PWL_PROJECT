@@ -27,7 +27,7 @@
         @foreach ($supplier as $s)
             <tr>
                 <td>{{ $s->id }}</td>
-                <td><img height="100" width="180"  src="{{asset('img/'.$s->gambar)}}"></td>
+                <td><img height="100" width="180"  src="{{asset('storage/' . $s->gambar)}}"></td>
                 <td>{{ $s->nama }}</td>
                 <td>{{ $s->kategori }}</td>
                 <td>{{ $s->email }}</td>

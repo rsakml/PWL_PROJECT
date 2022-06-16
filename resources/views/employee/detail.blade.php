@@ -6,7 +6,7 @@
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"><b>Id: </b>{{ $employee->id }}</li>
-                        <li class="list-group-item"><b>Gambar: </b><img width="100px" src="{{ asset('img/' . $employee->gambar) }}"></li>
+                        <li class="list-group-item"><b>Gambar: </b><img width="100px" src="{{ asset('storage/' . $employee->gambar) }}"></li>
                         <li class="list-group-item"><b>Nama: </b>{{ $employee->nama }}</li>
                         <li class="list-group-item"><b>Jenis Kelamin: </b>{{ $employee->jenisKelamin }}</li>
                         <li class="list-group-item"><b>jabatan: </b>{{ $employee->jabatan }}</li>
