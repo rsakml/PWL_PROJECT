@@ -15,8 +15,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $paginate = Product::orderBy('id_product', 'asc')->paginate(5);
-        return view('product.index', ['paginate' => $paginate]);
+        $product = Product::orderBy('id_product', 'asc')->paginate(5);
+        return view('product.index', compact('product'));
     }
 
     /**
@@ -37,9 +37,9 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
-            'id_product' => 'required',
-            'foto' => 'required|file|image|mimes:jpeg,png,jpg|max:1024',
+            'foto' => 'required',
             'nama_product' => 'required',
             'merk' => 'required',
             'harga_beli' => 'required',
@@ -47,18 +47,18 @@ class ProductController extends Controller
             'stok' => 'required',
         ]);
 
-        $product = new Product;
-        $product->id_product = $request->get('id_product');
-        $product->foto = $request->file('foto')->store('img', 'public');
-        $product->nama_product = $request->get('nama_product');
-        $product->merk = $request->get('merk');
-        $product->harga_beli = $request->get('harga_beli');
-        $product->harga_jual = $request->get('harga_jual');
-        $product->stok = $request->get('stok');
+        $foto = $request->file('foto')->store('images', 'public');
 
+        Product::create([
+            'id_product' => $request->id_customer,
+            'foto' => $foto,
+            'nama_product' => $request->nama_product,
+            'merk' => $request->merk,
+            'harga_beli' => $request->harga_beli,
+            'harga_jual' => $request->harga_jual,
+            'stok' => $request->stok
+        ]);
 
-        //fungsi eloquent untuk menambah data
-        Product::create($request->all());
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
         return redirect()->route('product.index')
             ->with('success', 'Product Berhasil Ditambahkan');
@@ -99,10 +99,9 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id_product)
     {
-        //melakukan validasi data
+        $product = Product::findOrFail($id_product);
         $request->validate([
-            'id_product' => 'required',
-            'foto' => 'required|file|image|mimes:jpeg,png,jpg|max:1024',
+            'foto' => 'required',
             'nama_product' => 'required',
             'merk' => 'required',
             'harga_beli' => 'required',
@@ -110,22 +109,17 @@ class ProductController extends Controller
             'stok' => 'required',
         ]);
 
-        $product = new Product;
-        $product->id_product = $request->get('id_product');
-        if($product->foto && file_exists(storage_path('app/public/'. $product->foto))){
-            \Storage::delete('public/'. $product->foto);
-        }
-        $image_name = $request->file('foto')->store('img', 'public');
-        $product->foto = $image_name;
-        $product->nama_product = $request->get('nama_product');
-        $product->merk = $request->get('merk');
-        $product->harga_beli = $request->get('harga_beli');
-        $product->harga_jual = $request->get('harga_jual');
-        $product->stok = $request->get('stok');
+        $foto = $request->file('foto')->store('images', 'public');
 
+        $product->update([
+            'foto' => $foto,
+            'merk' => $request->merk,
+            'harga_beli' => $request->harga_beli,
+            'harga_jual' => $request->harga_jual,
+            'stok' => $request->stok
+        ]);
+        $product->save();
 
-        //fungsi eloquent untuk mengupdate data inputan kita
-        Product::find($id_product)->update($request->all());
         //jika data berhasil diupdate, akan kembali ke halaman utama
         return redirect()->route('product.index')
             ->with('success', 'Product Berhasil Diupdate');

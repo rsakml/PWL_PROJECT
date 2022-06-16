@@ -27,11 +27,11 @@
             <th>Stok</th>
             <th width="290px">Action</th>
         </tr>
-        @foreach ($paginate as $produk)
+        @foreach ($product as $produk)
         <tr>
 
             <td>{{ $produk->id_product }}</td>
-            <td><img width="100px" height="100px" src="{{asset('img/'.$produk->foto)}}"></td>       
+            <td><img width="100px" height="100px" src="{{asset('storage/'.$produk->foto)}}"></td>       
             <td>{{ $produk->nama_product }}</td>
             <td>{{ $produk->merk }}</td>
             <td>{{ $produk->harga_beli}}</td>
@@ -50,7 +50,7 @@
         </tr>
     @endforeach
     </table>
-        {{ $paginate->links() }}
+        {{ $product->links() }}
         
 @endsection
 
