@@ -37,22 +37,24 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->file('gambar')){
-            $gambar1=$request->file('gambar')->store('img','public');
-        }
-        
-            Employee::create([
-                'id' => $request->id,
-                'nama' => $request->nama,
-                'gambar' => $gambar1,
-                'jenisKelamin' => $request->jenisKelamin,
-                'jabatan' => $request->jabatan,
-                'nohp' => $request->nohp
-            ]);
+        $request->validate([
+            'nama' => 'required', 'gambar' => 'required',
+            'jenisKelamin' => 'required', 'jabatan' => 'required', 'nohp' => 'required',
+        ]);
 
+        $gambar = $request->file('gambar')->store('images', 'public');
+        //fungsi eloquent untuk menambah data 
+        Employee::create([
+            'id' => $request->id,
+            'nama' => $request->nama,
+            'gambar' => $gambar,
+            'jenisKelamin' => $request->jenisKelamin,
+            'jabatan' => $request->jabatan,
+            'nohp' => $request->nohp
+        ]);
         //jika data berhasil ditambahkan, akan kembali ke halaman utama 
         return redirect()->route('employee.index')
-        ->with('success', 'Employee Berhasil Ditambahkan');
+            ->with('success', 'Employee Berhasil Ditambahkan');
     }
 
     /**
@@ -91,16 +93,25 @@ class EmployeeController extends Controller
     public function update(Request $request, $id)
     {
         //melakukan validasi data
-        $request->validate([ 'id' => 'required', 'nama' => 'required', 'gambar' => 'required',
-        'jenisKelamin' => 'required', 'jabatan' => 'required','nohp' => 'required',
+        $employee = Employee::findOrFail($id);
+        $request->validate([
+            'nama' => 'required', 'gambar' => 'required',
+            'jenisKelamin' => 'required', 'jabatan' => 'required', 'nohp' => 'required',
         ]);
 
-        //fungsi eloquent untuk mengupdate data inputan kita 
-        Employee::find($id)->update($request->all());
-
+        $gambar = $request->file('gambar')->store('images', 'public');
+        //fungsi eloquent untuk menambah data 
+        $employee->update([
+            'nama' => $request->nama,
+            'gambar' => $gambar,
+            'jenisKelamin' => $request->jenisKelamin,
+            'jabatan' => $request->jabatan,
+            'nohp' => $request->nohp
+        ]);
+        $employee->save();
         //jika data berhasil diupdate, akan kembali ke halaman utama 
         return redirect()->route('employee.index')
-        ->with('success', 'Employee Berhasil Diupdate');
+            ->with('success', 'Employee Berhasil Diupdate');
     }
 
     /**
@@ -114,6 +125,6 @@ class EmployeeController extends Controller
         //fungsi eloquent untuk menghapus data 
         Employee::find($id)->delete();
         return redirect()->route('employee.index')
-        -> with('success', 'Employee Berhasil Dihapus');
+            ->with('success', 'Employee Berhasil Dihapus');
     }
 }

@@ -38,11 +38,18 @@ class SupplierController extends Controller
     public function store(Request $request)
     {
         //melakukan validasi data
-        $request->validate([ 'id' => 'required', 'nama' => 'required', 'gambar' => 'required',
+        $request->validate([  'nama' => 'required', 'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         'kategori' => 'required', 'email' => 'required',
         ]);
         //fungsi eloquent untuk menambah data 
-        Supplier::create($request->all());
+        $gambar = $request->file('gambar')->store('images', 'public');
+        //fungsi eloquent untuk menambah data 
+        Supplier::create([
+            'nama' => $request->nama,
+            'kategori' => $request->kategori,
+            'email' => $request->email,
+            'gambar' => $gambar
+        ]);
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama 
         return redirect()->route('supplier.index')
@@ -85,13 +92,20 @@ class SupplierController extends Controller
     public function update(Request $request, $id)
     {
         //melakukan validasi data
-        $request->validate([ 'id' => 'required', 'nama' => 'required', 'gambar' => 'required',
+        $supplier = Supplier::findOrFail($id);
+        $request->validate([  'nama' => 'required', 'gambar' => 'required',
         'kategori' => 'required', 'email' => 'required',
         ]);
 
         //fungsi eloquent untuk mengupdate data inputan kita 
-        Supplier::find($id)->update($request->all());
-
+        $gambar = $request->file('gambar')->store('images','public');
+        $supplier->update([
+            'nama' => $request->nama,
+            'kategori' => $request->kategori,
+            'email' => $request->email,
+            'gambar' => $gambar
+        ]);
+        $supplier->save();
         //jika data berhasil diupdate, akan kembali ke halaman utama 
         return redirect()->route('supplier.index')
         ->with('success', 'supplier Berhasil Diupdate');
