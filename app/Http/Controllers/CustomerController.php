@@ -37,22 +37,24 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->file('foto')){
-            $foto=$request->file('foto')->store('img','public');
-        }
-        
-            Customer::create([
-                'id_customer' => $request->id_customer,
-                'foto' => $foto,
-                'nama' => $request->nama,
-                'jenisKelamin' => $request->jenisKelamin,
-                'alamat' => $request->alamat,
-                'noTelp' => $request->noTelp
-            ]);
+        $request->validate([
+            'foto' => 'required',
+            'nama' => 'required', 'jenisKelamin' => 'required', 'alamat' => 'required', 'noTelp' => 'required',
+        ]);
 
+        $foto = $request->file('foto')->store('images', 'public');
+        //fungsi eloquent untuk menambah data 
+        Customer::create([
+            'id_customer' => $request->id_customer,
+            'foto' => $foto,
+            'nama' => $request->nama,
+            'jenisKelamin' => $request->jenisKelamin,
+            'alamat' => $request->alamat,
+            'noTelp' => $request->noTelp
+        ]);
         //jika data berhasil ditambahkan, akan kembali ke halaman utama 
         return redirect()->route('customer.index')
-        ->with('success', 'Customer Berhasil Ditambahkan');
+            ->with('success', ' Customer Berhasil Ditambahkan');
     }
 
     /**
@@ -77,7 +79,7 @@ class CustomerController extends Controller
     public function edit($id_customer)
     {
         //menampilkan detail data dengan menemukan berdasarkan id Employee untuk diedit
-        $customer = Customer ::find($id_customer);
+        $customer = Customer::find($id_customer);
         return view('customer.edit', compact('customer'));
     }
 
@@ -91,16 +93,25 @@ class CustomerController extends Controller
     public function update(Request $request, $id_customer)
     {
         //melakukan validasi data
-        $request->validate([ 'id_customer' => 'required', 'foto' => 'required', 'nama' => 'required',
-        'jenisKelamin' => 'required', 'alamat' => 'required','noTelp' => 'required',
+        $customer = Customer::findOrFail($id_customer);
+        $request->validate([
+            'foto' => 'required',
+            'nama' => 'required', 'jenisKelamin' => 'required', 'alamat' => 'required', 'noTelp' => 'required',
         ]);
 
-        //fungsi eloquent untuk mengupdate data inputan kita 
-        Customer::find($id_customer)->update($request->all());
-
+        $foto = $request->file('foto')->store('images', 'public');
+        //fungsi eloquent untuk menambah data 
+        $customer->update([
+            'foto' => $foto,
+            'nama' => $request->nama,
+            'jenisKelamin' => $request->jenisKelamin,
+            'alamat' => $request->alamat,
+            'noTelp' => $request->noTelp
+        ]);
+        $customer->save();
         //jika data berhasil diupdate, akan kembali ke halaman utama 
         return redirect()->route('customer.index')
-        ->with('success', 'Customer Berhasil Diupdate');
+            ->with('success', 'Customer Berhasil Diupdate');
     }
 
     /**
@@ -114,6 +125,6 @@ class CustomerController extends Controller
         //fungsi eloquent untuk menghapus data 
         Customer::find($id_customer)->delete();
         return redirect()->route('customer.index')
-        -> with('success', 'Customer Berhasil Dihapus');
+            ->with('success', 'Customer Berhasil Dihapus');
     }
 }

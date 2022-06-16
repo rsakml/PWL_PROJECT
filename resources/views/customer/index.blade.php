@@ -29,7 +29,7 @@
             <tr>
                 <td>{{ $c->id_customer }}</td>
                 <td>{{ $c->nama }}</td>
-                <td><img height="200" width="180"  src="{{asset('img/'.$c->foto)}}"></td>      
+                <td><img height="200" width="180"  src="{{asset('storage/'.$c->foto)}}"></td>      
                 <td>{{ $c->jenisKelamin }}</td>
                 <td>{{ $c->alamat }}</td>
                 <td>{{ $c->noTelp }}</td>

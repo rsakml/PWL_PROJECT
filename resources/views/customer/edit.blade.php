@@ -12,14 +12,17 @@
                                 @endforeach
                             </ul>
                         </div>
-                        @endif <form method="post" action="{{ route('customer.update', $customer->id_customer) }}" id="myForm">
+                        @endif <form method="post" action="{{ route('customer.update', $customer->id_customer) }}" id="myForm"
+                            enctype="multipart/form-data">
                             @csrf @method('PUT')
                             <div class="form-group"> <label for="id_customer">Id Customer</label> <input type="text" name="id_customer"
                                     class="form-control" id="id_customer" value="{{ $customer->id_customer }}" aria-describedby="id_customer">
                             </div>
                             <div class="form-group"> <label for="foto">Foto</label> <input type="file" name="foto"
-                                    class="form-control" id="foto" value="{{ $customer->gambar }}"
-                                    aria-describedby="foto"> </div>
+                                    class="form-control" id="foto" value="{{ $customer->foto }}"
+                                    aria-describedby="foto"><img width="150" height="100"
+                                    src="{{ asset('storage/' . $customer->foto) }}"> </div>
+                            </div>
                             <div class="form-group"> <label for="nama">Nama</label> <input type="nama" name="nama"
                                     class="form-control" id="nama" value="{{ $customer->nama }}"
                                     aria-describedby="nama"> </div>
