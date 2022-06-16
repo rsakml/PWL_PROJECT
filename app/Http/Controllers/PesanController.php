@@ -48,7 +48,6 @@ class PesanController extends Controller
 	    	$pesanan->tanggal = $tanggal;
 	    	$pesanan->status = 0;
 	    	$pesanan->jumlah_harga = 0;
-            $pesanan->kode = mt_rand(1000, 3000);
 	    	$pesanan->save();
     	}
     	
@@ -122,13 +121,13 @@ class PesanController extends Controller
 
         if(empty($user->alamat))
         {
-            alert()->error('Pesanan Sukses Dihapus','Error');
+            // alert()->error('Pesanan Sukses Dihapus','Error');
             return redirect('profile');
         }
 
         if(empty($user->nohp))
         {
-            alert()->error('Identitasi Harap dilengkapi', 'Error');
+            // alert()->error('Identitasi Harap dilengkapi', 'Error');
             return redirect('profile');
         }
 
@@ -144,7 +143,7 @@ class PesanController extends Controller
             $product->update();
         }
 
-        alert()->success('Pesanan Sukses Check Out Silahkan Lanjutkan Proses Pembayaran', 'Success');
+        // alert()->success('Pesanan Sukses Check Out Silahkan Lanjutkan Proses Pembayaran', 'Success');
         return redirect('history/');
 
     }
