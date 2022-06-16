@@ -83,7 +83,7 @@ class PesanController extends Controller
     	$pesanan->jumlah_harga = $pesanan->jumlah_harga+$product->harga_jual*$request->jumlah_pesan;
     	$pesanan->update();
         
-        // Alert()->success('Pesanan Sukses Masuk Keranjang','Success');
+        Alert()->success('Pesanan Sukses Masuk Keranjang','Success');
     	return redirect('check-out');
 
     }
@@ -128,7 +128,7 @@ class PesanController extends Controller
 
         if(empty($user->nohp))
         {
-            alert()->error('Identitasi Harap dilengkapi', 'Error');
+          alert()->error('Identitasi Harap dilengkapi', 'Error');
             return redirect('profile');
         }
 
