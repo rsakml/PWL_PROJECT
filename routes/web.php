@@ -9,6 +9,8 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PesanController;
+use App\Http\Controllers\ProfileController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,4 +53,8 @@ Route::get('check-out', [PesanController::class, 'check_out']);
 Route::delete('check-out/{id}', [PesanController::class, 'delete']);
 Route::get('konfirmasi-check-out', [PesanController::class, 'konfirmasi']);
 
-Route::resource('history', HistoryController::class);
+Route::get('history', [HistoryController::class, 'indexhistory']);
+Route::get('history/{id}', [HistoryController::class, 'detail']);
+
+Route::get('profile', [ProfileController::class, 'index']);
+Route::post('profile', [ProfileController::class, 'update']);
