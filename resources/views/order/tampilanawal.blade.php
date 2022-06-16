@@ -20,7 +20,7 @@
                                 <div class="col-md-3 col-sm-4">
                                     <div class="single-new-arrival">
                                         <div class="single-new-arrival-bg">
-                                            <img width="10" height="250" src="{{ url('img') }}/{{ $p->foto }}" class="card-img-top"
+                                            <img width="10" height="250" src="{{ url('storage') }}/{{ $p->foto }}" class="card-img-top"
                             alt="...">
                                             <div class="single-new-arrival-bg-overlay"></div>
                                             <div class="sale bg-1">

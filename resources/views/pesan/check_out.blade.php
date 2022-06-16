@@ -34,7 +34,7 @@
                                         <tr>
                                             <td>{{ $no++ }}</td>
                                             <td>
-                                                <img src="{{ url('img') }}/{{ $pesanan_detail->product->foto }}"
+                                                <img src="{{ url('storage') }}/{{ $pesanan_detail->product->foto }}"
                                                     width="100" alt="...">
                                             </td>
                                             <td>{{ $pesanan_detail->product->nama_product }}</td>
