@@ -45,5 +45,10 @@ Route::resource('/product', ProductController::class);
 Route::resource('/customer', CustomerController::class);
 
 Route::resource('pesan', PesanController::class);
+Route::get('/pesan/{id}', [PesanController::class, 'indexProduct']);
+Route::post('pesan/{id}', [PesanController::class, 'pesan']);
+Route::get('check-out', [PesanController::class, 'check_out']);
+Route::delete('check-out/{id}', [PesanController::class, 'delete']);
+Route::get('konfirmasi-check-out', [PesanController::class, 'konfirmasi']);
 
 Route::resource('history', HistoryController::class);
