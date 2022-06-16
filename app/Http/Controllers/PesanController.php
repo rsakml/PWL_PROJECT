@@ -121,7 +121,7 @@ class PesanController extends Controller
 
         if(empty($user->alamat))
         {
-            // alert()->error('Pesanan Sukses Dihapus','Error');
+            alert()->error('Pesanan Sukses Dihapus','Error');
             return redirect('profile');
         }
 
@@ -143,7 +143,7 @@ class PesanController extends Controller
             $product->update();
         }
 
-        // alert()->success('Pesanan Sukses Check Out Silahkan Lanjutkan Proses Pembayaran', 'Success');
+        alert()->success('Pesanan Sukses Check Out Silahkan Lanjutkan Proses Pembayaran', 'Success');
         return redirect('history/');
 
     }
