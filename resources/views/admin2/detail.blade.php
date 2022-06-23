@@ -10,7 +10,7 @@
                         <li class="list-group-item"><b>Status: </b>{{ $pesanan->status }}</li>
                         <li class="list-group-item"><b>Jumlah Harga: </b>{{ $pesanan->jumlah_harga }}</li>
                     </ul>
-                </div> <a class="btn btn-success mt-3" href="{{ route('admin.index') }}">Kembali</a>
+                </div> <a class="btn btn-success mt-3" href="{{ route('admin2.index') }}">Kembali</a>
             </div>
         </div>
     </div>

@@ -6,6 +6,9 @@
             <div class="pull-center mt-2">
                 <Center>Daftar Transaksi</Center>
             </div>
+            <div class="float-right my-2">
+                <a class="btn btn-success" href="{{ route('admin2.create') }}"> Input Data</a>
+            </div>
             <br>
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
