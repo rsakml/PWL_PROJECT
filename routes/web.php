@@ -61,3 +61,5 @@ Route::get('profile', [ProfileController::class, 'index']);
 Route::post('profile', [ProfileController::class, 'update']);
 
 Route::resource('admin2', TransaksiController::class);
+
+Route::get('/history/{id}/cetak_pdf', [HistoryController::class, 'cetak_pdf']);
