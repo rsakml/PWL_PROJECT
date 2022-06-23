@@ -45,7 +45,7 @@
                                 </td>
                                 <td>{{ $pesanan_detail->product->nama_product }}</td>
                                 <td>{{ $pesanan_detail->jumlah }} </td>
-                                <td>Rp. {{ number_format($pesanan_detail->product->harga) }}</td>
+                                <td>Rp. {{ number_format($pesanan_detail->product->harga_jual) }}</td>
                                 <td>Rp. {{ number_format($pesanan_detail->jumlah_harga) }}</td>
                                 
                             </tr>
