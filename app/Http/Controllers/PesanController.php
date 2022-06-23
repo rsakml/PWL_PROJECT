@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Auth as FacadesAuth;
 use PharIo\Manifest\Author;
 
 
+
 class PesanController extends Controller
 {
     public function __construct()
@@ -228,6 +229,5 @@ class PesanController extends Controller
         -> with('success', 'Product Berhasil Dihapus');
 
     }
-
 }
 ?>

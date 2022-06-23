@@ -9,6 +9,7 @@ use App\Models\PesananDetails;
 use Auth;
 use Alert;
 use Illuminate\Http\Request;
+use PDF;
 
 class HistoryController extends Controller
 {
@@ -114,6 +115,14 @@ class HistoryController extends Controller
         return redirect()->route('admin2.index')
         -> with('success', 'product Berhasil Dihapus');
 
+    }
+
+    
+    public function cetak_pdf()
+    {
+        $pesanan = PesananDetails::all();
+        $pdf = PDF::loadview('pesan.pesan_pdf', ['pesanan_details' => $pesanan]);
+        return $pdf->stream();
     }
 }
 ?>
