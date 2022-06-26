@@ -100,11 +100,7 @@
 				            <!-- Collect the nav links, forms, and other content for toggling -->
 				            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
 				                <ul class="nav navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp">
-				                    <li class=" scroll active"><a href="beranda">Home</a></li>
-				                    <li class="scroll"><a href="#new-arrivals">New arrival</a></li>
-				                    <li class="scroll"><a href="#feature">Features</a></li>
-				                    <li class="scroll"><a href="#blog">Blog</a></li>
-				                    <li class="scroll"><a href="#newsletter">Contact</a></li>
+				                    <li class="tm-nav-li"><a href="beranda">Home</a></li>
 									<li class="tm-nav-li"><a href="pesan" class="tm-nav-link ">Order</a></li>
 				                </ul><!--/.nav -->
 				            </div><!-- /.navbar-collapse -->

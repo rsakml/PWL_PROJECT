@@ -72,7 +72,7 @@
                                     <a class="dropdown-item" href="{{ url('history') }}">
                                         Riwayat Pemesanan
                                     </a>
-                                    <a class="dropdown-item" href="{{ url('home1') }}"
+                                    <a class="dropdown-item" href="{{ url('/beranda') }}"
                                         onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
