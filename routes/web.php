@@ -23,19 +23,21 @@ use App\Http\Controllers\TransaksiController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/homeadmin', function () {
-    return view('admin.main');
-});
+// Route::get('/homeadmin', function () {
+//     return view('admin.main');
+// });
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/homeadmin', [HomeController::class, 'index'])->name('admin.main')->middleware('isAdmin');
 
-Route::get('/beranda', [BerandaController::class, 'index']);
+// Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::get('/', [BerandaController::class, 'index']);
 
 //route employee
 Route::resource('/employee', EmployeeController::class);
