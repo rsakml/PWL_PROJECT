@@ -1,11 +1,12 @@
 @extends('order.main')
 
 @section('content')
-    <div class="container">
-            @foreach ($products as $p)
+    {{-- <div class="container">
+            @foreach ($products as $p) --}}
                 <div class="container">
                     <div class="new-arrivals-content">
                         <div class="row">
+                            @foreach ($products as $p)
                             <div class="col-md-3 col-sm-4">
                                 <div class="single-new-arrival">
                                     <div class="single-new-arrival-bg">
@@ -31,11 +32,12 @@
                                             class="fa fa-shopping-cart"></i>Pesan</a> --}}
                                 </div>
                             </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
-            @endforeach
+            {{-- @endforeach
             <br><br>
             {{ $products->links() }}
-        </div>
+        </div> --}}
 @endsection
