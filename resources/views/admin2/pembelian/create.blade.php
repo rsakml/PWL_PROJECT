@@ -13,6 +13,7 @@
                             </ul>
                         </div>
                     @endif
+                    
                     <form method="post" action="{{ route('admin3.store') }}" id="myForm" enctype="multipart/form-data">
                         @csrf <div class="form-group"> <label for="id_pembelian">Id
                                 pembelian</label> <input type="text" name="id_pembelian" class="form-control"
