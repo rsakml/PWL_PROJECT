@@ -225,7 +225,7 @@
 
                 <p>
                   {{ Auth::user()->name }} - Admin
-                  <small>Furniture Office</small>
+                  <small>DR Furniture</small>
                 </p>
               </li>
               

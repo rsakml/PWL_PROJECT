@@ -57,6 +57,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="admin2"><i class="fa fa-circle-o"></i> Penjualan</a></li>
+            <li><a href="admin3"><i class="fa fa-circle-o"></i> Pembelian</a></li>
           </ul>
         </li>
    
