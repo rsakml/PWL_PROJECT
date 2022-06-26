@@ -7,6 +7,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\PembelianController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PesanController;
 use App\Http\Controllers\ProfileController;
@@ -63,5 +64,6 @@ Route::get('profile', [ProfileController::class, 'index']);
 Route::post('profile', [ProfileController::class, 'update']);
 
 Route::resource('admin2', TransaksiController::class);
+Route::resource('admin3', PembelianController::class);
 
 Route::get('/history/cetak_pdf/{id}', [HistoryController::class, 'cetak_pdf'])->name('cetak_pdf');
