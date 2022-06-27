@@ -31,7 +31,8 @@
                                 class="btn btn-info" href="{{ route('admin2.show', $p->id) }}">Show</a>
                                 <a class="btn btn-primary" href="{{ route('admin2.edit', $p->id) }}">Edit</a>
                             @csrf
-                             @method('DELETE') <button type="submit" class="btn btn-danger">Delete</button> </form>
+                             @method('DELETE') <button type="submit" class="btn btn-danger"
+                             onclick="return confirm('Anda yakin akan menghapus data ?');">Delete</button> </form>
                     </td>
                 </tr>
             @endforeach 

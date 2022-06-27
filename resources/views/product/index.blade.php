@@ -44,7 +44,8 @@
                 {{-- <a class="btn btn-warning" href="{{route('nilai',$produk->nim) }}"> Nilai</a> --}}
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger">Delete</button>
+                <button type="submit" class="btn btn-danger"
+                onclick="return confirm('Anda yakin akan menghapus data ?');">Delete</button>
             </form>
             </td>
         </tr>

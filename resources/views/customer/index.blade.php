@@ -38,7 +38,8 @@
                             class="btn btn-primary" href="{{ route('customer.edit', $c->id_customer) }}">Edit</a>
                             <a class="btn btn-info" href="{{ route('customer.show', $c->id_customer) }}">Show</a>
                         @csrf
-                         @method('DELETE') <button type="submit" class="btn btn-danger">Delete</button> </form>
+                         @method('DELETE') <button type="submit" class="btn btn-danger"
+                         onclick="return confirm('Anda yakin akan menghapus data ?');">Delete</button> </form>
                 </td>
             </tr>
         @endforeach 
