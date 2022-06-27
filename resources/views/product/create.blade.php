@@ -23,10 +23,6 @@
                     <form method="post" enctype="multipart/form-data" action="{{ route('product.store') }}" id="myForm">
                     @csrf
                         <div class="form-group">
-                            <label for="id_product">ID Product</label>
-                            <input type="text" name="id_product" class="form-control" id="id_product" aria-describedby="id_product" >
-                        </div>
-                        <div class="form-group">
                             <label for="foto">Foto</label>
                             <input type="file" class="form-control" required="required" name="foto">
                         </div>

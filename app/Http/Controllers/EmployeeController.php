@@ -38,8 +38,8 @@ class EmployeeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama' => 'required', 'gambar' => 'required',
-            'jenisKelamin' => 'required', 'jabatan' => 'required', 'nohp' => 'required',
+            'nama' => 'required', 'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'jenisKelamin' => 'required', 'jabatan' => 'required', 'nohp' => 'required|numeric',
         ]);
 
         $gambar = $request->file('gambar')->store('images', 'public');
@@ -95,8 +95,8 @@ class EmployeeController extends Controller
         //melakukan validasi data
         $employee = Employee::findOrFail($id);
         $request->validate([
-            'nama' => 'required', 'gambar' => 'required',
-            'jenisKelamin' => 'required', 'jabatan' => 'required', 'nohp' => 'required',
+            'nama' => 'required', 'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'jenisKelamin' => 'required', 'jabatan' => 'required', 'nohp' => 'required|numeric',
         ]);
 
         $gambar = $request->file('gambar')->store('images', 'public');

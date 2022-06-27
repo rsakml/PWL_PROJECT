@@ -14,9 +14,6 @@
                     </div>
                     @endif <form method="post" action="{{ route('supplier.update', $supplier->id) }}" id="myForm" enctype="multipart/form-data">
                         @csrf @method('PUT')
-                        <div class="form-group"> <label for="id">Id</label> <input type="text" name="id"
-                                class="form-control" id="id" value="{{ $supplier->id }}" aria-describedby="id">
-                        </div>
                         <div class="form-group"> <label for="Gambar">gambar</label> <input type="file" name="gambar"
                                 class="form-control" id="gambar" value="{{ $supplier->gambar }}"
                                 aria-describedby="gambar"><img width="150" height="100"  src="{{ asset('storage/' . $supplier->gambar) }}" > </div>

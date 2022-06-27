@@ -16,10 +16,6 @@
                     <form method="post" action="{{ route('admin3.update', $pembelian->id_pembelian) }}" id="myForm"
                         enctype="multipart/form-data">
                         @csrf @method('PUT')
-                        <div class="form-group"> <label for="id_pembelian">Id Pembelian</label> <input type="text"
-                                name="id_pembelian" class="form-control" id="id_pembelian"
-                                value="{{ $pembelian->id_pembelian }}" aria-describedby="id_pembelian">
-                        </div>
                         <div class="form-group"> <label for="nama_supplier">Nama Supplier</label> <input
                                 type="nama_supplier" name="nama_supplier" class="form-control" id="nama_supplier"
                                 value="{{ $pembelian->nama_supplier }}" aria-describedby="nama_supplier"> </div>

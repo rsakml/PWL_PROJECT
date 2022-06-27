@@ -38,8 +38,8 @@ class CustomerController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'foto' => 'required',
-            'nama' => 'required', 'jenisKelamin' => 'required', 'alamat' => 'required', 'noTelp' => 'required',
+            'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'nama' => 'required', 'jenisKelamin' => 'required', 'alamat' => 'required', 'noTelp' => 'required|numeric',
         ]);
 
         $foto = $request->file('foto')->store('images', 'public');
@@ -95,8 +95,8 @@ class CustomerController extends Controller
         //melakukan validasi data
         $customer = Customer::findOrFail($id_customer);
         $request->validate([
-            'foto' => 'required',
-            'nama' => 'required', 'jenisKelamin' => 'required', 'alamat' => 'required', 'noTelp' => 'required',
+            'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'nama' => 'required', 'jenisKelamin' => 'required', 'alamat' => 'required', 'noTelp' => 'required|numeric',
         ]);
 
         $foto = $request->file('foto')->store('images', 'public');

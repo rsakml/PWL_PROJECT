@@ -15,9 +15,7 @@
                     @endif
                     
                     <form method="post" action="{{ route('admin3.store') }}" id="myForm" enctype="multipart/form-data">
-                        @csrf <div class="form-group"> <label for="id_pembelian">Id
-                                pembelian</label> <input type="text" name="id_pembelian" class="form-control"
-                                id="id_pembelian" aria-describedby="id"> </div>
+                        @csrf 
                         <div class="form-group"> <label for="nama_supplier">Nama Supplier</label>
                             <input type="nama_supplier" name="nama_supplier" class="form-control" id="nama_supplier"
                                 aria-describedby="nama_supplier">

@@ -166,8 +166,8 @@ class PesanController extends Controller
     public function store(Request $request)
     {
         //melakukan validasi data
-        $request->validate([ 'foto' => 'required', 'nama_product' => 'required', 'harga_jual' => 'required',
-        'stok' => 'required', 
+        $request->validate([ 'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048', 'nama_product' => 'required', 'harga_jual' => 'required|numeric',
+        'stok' => 'required|numeric', 
         ]);
         //fungsi eloquent untuk menambah data 
         Product::create($request->all());
@@ -208,8 +208,8 @@ class PesanController extends Controller
     public function update(Request $request, $id_product)
     {
         //melakukan validasi data
-        $request->validate([ 'foto' => 'required', 'nama_product' => 'required', 'harga_jual' => 'required',
-        'stok' => 'required', 
+        $request->validate([ 'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048', 'nama_product' => 'required', 'harga_jual' => 'required|numeric',
+        'stok' => 'required|numeric', 
         ]);
 
         //fungsi eloquent untuk mengupdate data inputan kita 

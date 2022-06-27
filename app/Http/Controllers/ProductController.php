@@ -39,12 +39,12 @@ class ProductController extends Controller
     {
 
         $request->validate([
-            'foto' => 'required',
+            'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'nama_product' => 'required',
             'merk' => 'required',
-            'harga_beli' => 'required',
-            'harga_jual' => 'required',
-            'stok' => 'required',
+            'harga_beli' => 'required|numeric',
+            'harga_jual' => 'required|numeric',
+            'stok' => 'required|numeric',
         ]);
 
         $foto = $request->file('foto')->store('images', 'public');
@@ -101,12 +101,12 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id_product);
         $request->validate([
-            'foto' => 'required',
+            'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'nama_product' => 'required',
             'merk' => 'required',
-            'harga_beli' => 'required',
-            'harga_jual' => 'required',
-            'stok' => 'required',
+            'harga_beli' => 'required|numeric',
+            'harga_jual' => 'required|numeric',
+            'stok' => 'required|numeric',
         ]);
 
         $foto = $request->file('foto')->store('images', 'public');

@@ -12,9 +12,7 @@
                             @endforeach
                         </ul>
                     </div>
-                    @endif <form method="post" action="{{ route('supplier.store') }}" id="myForm" enctype="multipart/form-data"> @csrf <div
-                            class="form-group"> <label for="id">Id</label> <input type="text" name="id"
-                                class="form-control" id="id" aria-describedby="id"> </div>
+                    @endif <form method="post" action="{{ route('supplier.store') }}" id="myForm" enctype="multipart/form-data"> @csrf 
                         <div class="form-group"> <label for="gambar">Gambar</label> <input type="file"
                                 name="gambar" class="form-control" id="gambar" aria-describedby="gambar"> </div>
                         <div class="form-group"> <label for="nama">Nama</label>

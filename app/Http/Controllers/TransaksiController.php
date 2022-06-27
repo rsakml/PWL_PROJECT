@@ -16,7 +16,7 @@ class TransaksiController extends Controller
     public function index()
     {
         //fungsi eloquent menampilkan data menggunakan paginaon
-        $pesanan = Pesanan::orderBy('id', 'asc')->paginate(5);
+        $pesanan = Pesanan::orderBy('tanggal', 'desc')->paginate(5);
         return view('admin2.index', compact('pesanan'));
     }
 
@@ -39,7 +39,7 @@ class TransaksiController extends Controller
     public function store(Request $request)
     {
         //melakukan validasi data
-        $request->validate([ 'tanggal' => 'required', 'status' => 'required', 'jumlah_harga' => 'required'
+        $request->validate([ 'tanggal' => 'required', 'status' => 'required', 'jumlah_harga' => 'required|numeric'
         ]);
         //fungsi eloquent untuk menambah data 
         Pesanan::create($request->all());
@@ -88,7 +88,7 @@ class TransaksiController extends Controller
     public function update(Request $request, $id)
     {
         //melakukan validasi data
-        $request->validate([ 'tanggal' => 'required', 'status' => 'required', 'jumlah_harga' => 'required'
+        $request->validate([ 'tanggal' => 'required', 'status' => 'required', 'jumlah_harga' => 'required|numeric'
         ]);
 
         //fungsi eloquent untuk mengupdate data inputan kita 

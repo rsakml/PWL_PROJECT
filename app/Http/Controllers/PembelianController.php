@@ -33,8 +33,8 @@ class PembelianController extends Controller
     public function store(Request $request)
     {
         //melakukan validate data
-        $request->validate([ 'nama_supplier' => 'required', 'alamat' => 'required', 'nohp' => 'required'
-        , 'nama_bahan' => 'required', 'jumlah' => 'required', 'harga' => 'required'
+        $request->validate([ 'nama_supplier' => 'required', 'alamat' => 'required', 'nohp' => 'required|numeric'
+        , 'nama_bahan' => 'required', 'jumlah' => 'required|numeric', 'harga' => 'required|numeric'
         ]);
         //fungsi eloquent untuk menambah data 
         Pembelian::create($request->all());
@@ -81,8 +81,8 @@ class PembelianController extends Controller
     public function update(Request $request, $id_pembelian)
     {
         //melakukan valid_pembelianasi data
-        $request->validate([ 'nama_supplier' => 'required', 'alamat' => 'required', 'nohp' => 'required'
-        , 'nama_bahan' => 'required', 'jumlah' => 'required', 'harga' => 'required'
+        $request->validate([ 'nama_supplier' => 'required', 'alamat' => 'required', 'nohp' => 'required|numeric'
+        , 'nama_bahan' => 'required', 'jumlah' => 'required|numeric', 'harga' => 'required|numeric'
         ]);
 
         //fungsi eloquent untuk mengupdate data inputan kita 
