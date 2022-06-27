@@ -35,18 +35,14 @@
         @foreach ($pesanan_details as $pesanan_detail)
             <tr>
                 <td>{{ $no++ }}</td>
-                <td>{{ $pesanan_detail->product->foto }}</td>
+                <td> <img src="{{ url('storage') }}/{{ $pesanan_detail->product->foto }}"
+                    width="100" alt="..."></td>
                 <td align="center">{{ $pesanan_detail->product->nama_product }}</td>
                 <td align="center">{{ $pesanan_detail->jumlah }}</td>
                 <td align="center">{{ number_format($pesanan_detail->product->harga_jual) }}</td>
                 <td align="center">{{ number_format($pesanan_detail->jumlah_harga) }}</td>
             </tr>
         @endforeach
-        <tr>
-            <td colspan="5" align="right"><strong>Total Harga :</strong></td>
-            <td align="right"><strong>Rp. {{ number_format($pesanan_detail->jumlah_harga) }}</strong></td>
-            
-        </tr>
     </table>
 </body>
 

@@ -2,7 +2,7 @@
     <div class="container mt-5">
         <div class="row justify-content-center align-items-center">
             <div class="card" style="width: 24rem;">
-                <div class="card-header"> Detail Transaksi </div>
+                <div class="card-header"> Detail Transaksi Penjualan</div>
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"><b>Id: </b>{{ $pesanan->id }}</li>

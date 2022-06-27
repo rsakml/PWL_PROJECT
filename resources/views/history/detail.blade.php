@@ -62,7 +62,6 @@
                 </div>
             </div>
         </div>
-        <center><a class="btn btn-danger" href="{{ route('cetak_pdf', $pesanan->id) }}"> Cetak Ke PDF</a></center>
     </div>
 </div>
 @endsection

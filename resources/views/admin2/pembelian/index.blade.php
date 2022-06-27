@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-center mt-2">
-                <Center>Daftar Pembelian</Center>
+                <Center>Daftar Transaksi Pembelian</Center>
             </div>
             <div class="float-right my-2">
                 <a class="btn btn-success" href="{{ route('admin3.create') }}"> Input Data</a>
@@ -17,7 +17,7 @@
         @endif 
         <table class="table table-striped table-hover">
             <tr>
-                <th>id_pembelian</th>
+                <th>Id</th>
                 <th>Nama Supplier</th>
                 <th>Alamat</th>
                 <th>No Hp</th>

@@ -4,10 +4,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-center mt-2">
-                <Center>Daftar Transaksi</Center>
-            </div>
-            <div class="float-right my-2">
-                <a class="btn btn-success" href="{{ route('admin2.create') }}"> Input Data</a>
+                <Center>Daftar Transaksi Penjualan</Center>
             </div>
             <br>
     @if ($message = Session::get('success'))
