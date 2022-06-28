@@ -46,6 +46,7 @@
                             <label for="stok">Stok</label>
                             <input type="stok" name="stok" class="form-control" id="stok" aria-describedby="stok" >
                         </div>
+                        <a class="btn btn-success mt-3" href="{{ route('product.index') }}">Kembali</a>
                     <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
