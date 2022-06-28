@@ -22,7 +22,9 @@
                                 type="kategori" name="kategori" class="form-control" id="kategori"
                                 aria-describedby="kategori"> </div>
                         <div class="form-group"> <label for="email">Email</label> <input type="email" name="email"
-                                class="form-control" id="email" aria-describedby="email"> </div> <button type="submit"
+                                class="form-control" id="email" aria-describedby="email"> </div> 
+                                <a class="btn btn-success mt-3" href="{{ route('supplier.index') }}">Kembali</a>
+                                <button type="submit"
                             class="btn btn-primary">Submit</button>
                     </form>
             </div>

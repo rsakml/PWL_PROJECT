@@ -27,7 +27,8 @@
                             <div class="form-group"> <label for="alamat">Alamat</label> <input type="alamat"
                                     name="alamat" class="form-control" id="alamat" aria-describedby="alamat"> </div>
                             <div class="form-group"> <label for="noTelp">No Telp</label> <input type="noTelp" name="noTelp"
-                                    class="form-control" id="noTelp" aria-describedby="noTelp"> </div> <button type="submit"
+                                    class="form-control" id="noTelp" aria-describedby="noTelp"> </div> <a class="btn btn-success mt-3" href="{{ route('customer.index') }}">Kembali</a>
+                                     <button type="submit"
                                 class="btn btn-primary">Submit</button>
                         </form>
                 </div>

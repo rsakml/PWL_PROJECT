@@ -25,7 +25,8 @@
                                     type="jabatan" name="jabatan" class="form-control" id="jabatan"
                                     aria-describedby="jabatan"> </div>
                             <div class="form-group"> <label for="nohp">No.Hp</label> <input type="nohp" name="nohp"
-                                    class="form-control" id="nohp" aria-describedby="nohp"> </div> <button type="submit"
+                                    class="form-control" id="nohp" aria-describedby="nohp"> </div> <a class="btn btn-success mt-3" href="{{ route('employee.index') }}">Kembali</a>
+                                    <button type="submit"
                                 class="btn btn-primary">Submit</button>
                         </form>
                 </div>
